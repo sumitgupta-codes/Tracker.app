@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HabitFlow</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">✓</div>
+
+            <div>
+                <h2>HabitFlow</h2>
+                <span>Build better habits</span>
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <button class="nav-item active" data-page="dashboard">
+                <span>▦</span>
+                Dashboard
+            </button>
+
+            <button class="nav-item" data-page="statistics">
+                <span>◷</span>
+                Statistics
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+            <p>Small steps every day.</p>
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboardPage" class="page active-page">
+
+            <header class="topbar">
+
+                <div>
+                    <h1>Good day 👋</h1>
+                    <p>Stay consistent. Stay focused.</p>
+                </div>
+
+                <button class="add-btn" id="openModal">
+                    <span>+</span>
+                    Add Habit
+                </button>
+
+            </header>
+
+
+            <!-- STATS -->
+
+            <section class="stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon fire">
+                        🔥
+                    </div>
+
+                    <div>
+                        <span>Current Streak</span>
+                        <strong id="currentStreak">0 days</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon trophy">
+                        🏆
+                    </div>
+
+                    <div>
+                        <span>Best Streak</span>
+                        <strong id="bestStreak">0 days</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon chart">
+                        📊
+                    </div>
+
+                    <div>
+                        <span>Completion</span>
+                        <strong id="completion">0%</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon habits">
+                        ✓
+                    </div>
+
+                    <div>
+                        <span>Total Habits</span>
+                        <strong id="totalHabits">0</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CALENDAR -->
+
+            <section class="calendar-card">
+
+                <div class="calendar-header">
+
+                    <div>
+
+                        <h2 id="monthTitle">
+                            September 2026
+                        </h2>
+
+                        <p>
+                            Track your daily progress
+                        </p>
+
+                    </div>
+
+
+                    <div class="month-controls">
+
+                        <button id="prevMonth">
+                            ‹
+                        </button>
+
+                        <button id="todayBtn">
+                            Today
+                        </button>
+
+                        <button id="nextMonth">
+                            ›
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="calendar" id="calendar"></div>
+
+            </section>
+
+
+            <!-- HABITS -->
+
+            <section class="habits-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>Your Habits</h2>
+
+                        <p>
+                            Click a date to mark your habit complete.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="habitList"></div>
+
+
+                <div class="empty-state" id="emptyState">
+
+                    <div>🌱</div>
+
+                    <h3>No habits yet</h3>
+
+                    <p>
+                        Add your first habit and start building consistency.
+                    </p>
+
+                    <button
+                        class="add-btn small"
+                        id="emptyAddBtn"
+                    >
+                        + Add Habit
+                    </button>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+
+        <!-- ================= STATISTICS ================= -->
+
+        <section id="statisticsPage" class="page">
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>Statistics 📊</h1>
+
+                    <p>
+                        See how consistent you have been.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <!-- BIG STAT CARDS -->
+
+            <section class="stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon chart">
+                        📈
+                    </div>
+
+                    <div>
+
+                        <span>Overall Completion</span>
+
+                        <strong id="statsCompletion">
+                            0%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon fire">
+                        🔥
+                    </div>
+
+                    <div>
+
+                        <span>Current Streak</span>
+
+                        <strong id="statsCurrentStreak">
+                            0 days
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon trophy">
+                        🏆
+                    </div>
+
+                    <div>
+
+                        <span>Longest Streak</span>
+
+                        <strong id="statsBestStreak">
+                            0 days
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon habits">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>Total Habits</span>
+
+                        <strong id="statsTotalHabits">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- WEEKLY -->
+
+            <section class="statistics-card">
+
+                <div class="statistics-heading">
+
+                    <div>
+
+                        <h2>This Week</h2>
+
+                        <p>
+                            Your habit completion for the current week.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="week-chart" id="weekChart"></div>
+
+            </section>
+
+
+            <!-- HABIT PERFORMANCE -->
+
+            <section class="statistics-card">
+
+                <div class="statistics-heading">
+
+                    <div>
+
+                        <h2>Habit Performance</h2>
+
+                        <p>
+                            See which habits you are actually sticking to.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="statisticsHabitList"></div>
+
+            </section>
+
+
+            <!-- INSIGHTS -->
+
+            <section class="insights-grid">
+
+                <div class="insight-card">
+
+                    <span>🏆 Most Consistent</span>
+
+                    <strong id="bestHabitName">
+                        —
+                    </strong>
+
+                    <p id="bestHabitPercent">
+                        No data yet
+                    </p>
+
+                </div>
+
+
+                <div class="insight-card">
+
+                    <span>⚠️ Needs Attention</span>
+
+                    <strong id="worstHabitName">
+                        —
+                    </strong>
+
+                    <p id="worstHabitPercent">
+                        No data yet
+                    </p>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<!-- ================= MODAL ================= -->
+
+<div class="modal-overlay" id="modalOverlay">
+
+    <div class="modal">
+
+        <button class="close-btn" id="closeModal">
+            ×
+        </button>
+
+
+        <div class="modal-title">
+
+            <div class="modal-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <h2>Add New Habit</h2>
+
+                <p>
+                    Create something worth being consistent with.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form id="habitForm">
+
+            <label for="habitName">
+                Habit Name
+            </label>
+
+            <input
+                type="text"
+                id="habitName"
+                placeholder="e.g. Read 20 pages"
+                maxlength="40"
+                required
+            >
+
+
+            <label>
+                Choose an icon
+            </label>
+
+
+            <div class="emoji-picker" id="emojiPicker">
+
+                <button type="button" class="emoji active">📚</button>
+
+                <button type="button" class="emoji">💻</button>
+
+                <button type="button" class="emoji">🏋️</button>
+
+                <button type="button" class="emoji">🧘</button>
+
+                <button type="button" class="emoji">💧</button>
+
+                <button type="button" class="emoji">🎯</button>
+
+                <button type="button" class="emoji">✍️</button>
+
+                <button type="button" class="emoji">🚶</button>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelModal"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="save-btn"
+                >
+                    Create Habit
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

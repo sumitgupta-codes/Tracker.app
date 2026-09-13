@@ -1,0 +1,1235 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+}
+
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    width: 240px;
+    background: #ffffff;
+    border-right: 1px solid #e8ebf1;
+    padding: 28px 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 0 10px;
+    margin-bottom: 45px;
+}
+
+
+.logo-icon {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 11px;
+
+    background: #5b5ce2;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 21px;
+    font-weight: 700;
+}
+
+
+.logo h2 {
+    font-size: 17px;
+}
+
+
+.logo span {
+    display: block;
+
+    font-size: 10px;
+    color: #9299a8;
+
+    margin-top: 2px;
+}
+
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+
+.nav-item {
+    background: transparent;
+
+    text-align: left;
+
+    padding: 13px 14px;
+
+    border-radius: 10px;
+
+    color: #777f91;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+
+.nav-item:hover {
+    background: #f4f5f9;
+}
+
+
+.nav-item span {
+    margin-right: 11px;
+    font-size: 17px;
+}
+
+
+.nav-item.active {
+    background: #eeefff;
+    color: #5556d9;
+    font-weight: 600;
+}
+
+
+.sidebar-bottom {
+    margin-top: auto;
+
+    padding: 10px;
+
+    color: #b0b5c0;
+
+    font-size: 11px;
+}
+
+
+/* ================= MAIN ================= */
+
+.main {
+    margin-left: 240px;
+
+    width: calc(100% - 240px);
+
+    max-width: 1450px;
+
+    padding: 38px 45px 60px;
+}
+
+
+.page {
+    display: none;
+}
+
+
+.active-page {
+    display: block;
+}
+
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+
+.topbar h1 {
+    font-size: 28px;
+
+    letter-spacing: -0.7px;
+}
+
+
+.topbar p {
+    color: #8a91a1;
+
+    margin-top: 6px;
+
+    font-size: 13px;
+}
+
+
+.add-btn {
+    background: #5b5ce2;
+
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    box-shadow: 0 6px 16px rgba(91, 92, 226, 0.2);
+
+    transition: 0.2s;
+}
+
+
+.add-btn:hover {
+    transform: translateY(-2px);
+
+    background: #4e4fd2;
+}
+
+
+.add-btn span {
+    font-size: 18px;
+
+    margin-right: 5px;
+}
+
+
+/* ================= STATS ================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 25px;
+}
+
+
+.stat-card {
+    background: white;
+
+    border: 1px solid #e9ecf2;
+
+    border-radius: 14px;
+
+    padding: 19px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.stat-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 11px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 19px;
+}
+
+
+.fire {
+    background: #fff1e9;
+}
+
+
+.trophy {
+    background: #fff8d9;
+}
+
+
+.chart {
+    background: #e9f5ff;
+}
+
+
+.habits {
+    background: #edf0ff;
+
+    color: #5b5ce2;
+
+    font-weight: 700;
+}
+
+
+.stat-card span {
+    display: block;
+
+    color: #9299a8;
+
+    font-size: 11px;
+
+    margin-bottom: 5px;
+}
+
+
+.stat-card strong {
+    font-size: 19px;
+}
+
+
+/* ================= CALENDAR ================= */
+
+.calendar-card {
+    background: white;
+
+    border: 1px solid #e9ecf2;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+}
+
+
+.calendar-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+
+.calendar-header h2 {
+    font-size: 18px;
+}
+
+
+.calendar-header p {
+    color: #999fac;
+
+    font-size: 11px;
+
+    margin-top: 5px;
+}
+
+
+.month-controls {
+    display: flex;
+
+    gap: 6px;
+}
+
+
+.month-controls button {
+    background: #f5f6fa;
+
+    color: #626a7a;
+
+    border-radius: 8px;
+
+    min-width: 34px;
+    height: 34px;
+
+    font-size: 16px;
+}
+
+
+.month-controls button:hover {
+    background: #eceef5;
+}
+
+
+.month-controls #todayBtn {
+    padding: 0 12px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.calendar {
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+
+    gap: 7px;
+}
+
+
+.weekday {
+    color: #a1a7b3;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    padding-bottom: 8px;
+}
+
+
+.day {
+    min-height: 54px;
+
+    border-radius: 9px;
+
+    background: #fafbfc;
+
+    border: 1px solid #f0f1f5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    font-size: 12px;
+
+    color: #707887;
+}
+
+
+.day.empty {
+    background: transparent;
+
+    border: none;
+}
+
+
+.day.today {
+    border: 2px solid #5b5ce2;
+
+    color: #5556d9;
+
+    font-weight: 700;
+}
+
+
+.day.has-progress {
+    background: #eeeeff;
+
+    color: #5556d9;
+
+    font-weight: 600;
+}
+
+
+.progress-dot {
+    position: absolute;
+
+    bottom: 6px;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #5b5ce2;
+}
+
+
+/* ================= HABITS ================= */
+
+.habits-section {
+    background: white;
+
+    border: 1px solid #e9ecf2;
+
+    border-radius: 16px;
+
+    padding: 25px;
+}
+
+
+.section-heading {
+    margin-bottom: 18px;
+}
+
+
+.section-heading h2 {
+    font-size: 18px;
+}
+
+
+.section-heading p {
+    color: #999fac;
+
+    font-size: 11px;
+
+    margin-top: 5px;
+}
+
+
+/*
+    Habit table:
+    Habit | dates | streak | progress | delete
+*/
+
+.habit-wrapper {
+    margin-bottom: 20px;
+
+    border: 1px solid #edf0f4;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+
+.habit-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 13px 15px;
+
+    background: #fafbfc;
+}
+
+
+.habit-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.habit-icon {
+    width: 38px;
+    height: 38px;
+
+    background: #f0f1ff;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+}
+
+
+.habit-name {
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.habit-subtitle {
+    font-size: 10px;
+
+    color: #9ca2af;
+
+    margin-top: 4px;
+}
+
+
+.habit-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.habit-streak {
+    color: #f08a45;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+}
+
+
+.delete-btn {
+    background: transparent;
+
+    color: #b8bdc7;
+
+    font-size: 18px;
+
+    padding: 5px;
+}
+
+
+.delete-btn:hover {
+    color: #e05252;
+}
+
+
+/* ================= HABIT DAYS ================= */
+
+.days-container {
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+
+    gap: 6px;
+
+    padding: 15px;
+}
+
+
+.habit-day {
+    height: 39px;
+
+    border-radius: 8px;
+
+    background: #f7f8fa;
+
+    border: 1px solid #eceef2;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    font-size: 10px;
+
+    color: #7c8492;
+
+    transition: 0.15s;
+}
+
+
+.habit-day:hover {
+    background: #eeeeff;
+
+    border-color: #cfd0f7;
+}
+
+
+.habit-day.completed {
+    background: #5b5ce2;
+
+    color: white;
+
+    border-color: #5b5ce2;
+}
+
+
+.habit-day.today {
+    outline: 2px solid #8d8eea;
+
+    outline-offset: 1px;
+}
+
+
+.habit-day small {
+    position: absolute;
+
+    top: 3px;
+
+    left: 5px;
+
+    font-size: 7px;
+
+    opacity: 0.6;
+}
+
+
+/* ================= EMPTY ================= */
+
+.empty-state {
+    text-align: center;
+
+    padding: 40px 20px;
+
+    display: none;
+}
+
+
+.empty-state div {
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+
+.empty-state h3 {
+    font-size: 15px;
+}
+
+
+.empty-state p {
+    color: #9ba1ad;
+
+    font-size: 11px;
+
+    margin: 6px 0 18px;
+}
+
+
+.small {
+    padding: 9px 14px;
+}
+
+
+/* ================= STATISTICS ================= */
+
+.statistics-card {
+    background: white;
+
+    border: 1px solid #e9ecf2;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+}
+
+
+.statistics-heading {
+    margin-bottom: 25px;
+}
+
+
+.statistics-heading h2 {
+    font-size: 18px;
+}
+
+
+.statistics-heading p {
+    color: #999fac;
+
+    font-size: 11px;
+
+    margin-top: 5px;
+}
+
+
+/* WEEK CHART */
+
+.week-chart {
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+
+    gap: 14px;
+
+    align-items: end;
+
+    min-height: 210px;
+}
+
+
+.week-day-column {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    height: 200px;
+
+    justify-content: flex-end;
+}
+
+
+.week-percentage {
+    font-size: 10px;
+
+    color: #7e8695;
+}
+
+
+.week-bar-container {
+    width: 100%;
+
+    height: 140px;
+
+    background: #f2f3f7;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    overflow: hidden;
+}
+
+
+.week-bar {
+    width: 100%;
+
+    background: #5b5ce2;
+
+    border-radius: 10px;
+
+    transition: height 0.4s;
+}
+
+
+.week-day-name {
+    font-size: 10px;
+
+    color: #858c9a;
+}
+
+
+.week-day-number {
+    font-size: 9px;
+
+    color: #a3a8b2;
+}
+
+
+/* PERFORMANCE */
+
+.performance-row {
+    display: grid;
+
+    grid-template-columns: 1fr 120px 100px;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #f0f1f4;
+}
+
+
+.performance-row:last-child {
+    border-bottom: none;
+}
+
+
+.performance-name {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.performance-icon {
+    width: 35px;
+    height: 35px;
+
+    background: #f0f1ff;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.performance-progress {
+    width: 100%;
+}
+
+
+.performance-bar {
+    height: 7px;
+
+    background: #eef0f4;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.performance-fill {
+    height: 100%;
+
+    background: #5b5ce2;
+
+    border-radius: 10px;
+}
+
+
+.performance-percent {
+    text-align: right;
+
+    font-size: 11px;
+
+    color: #747c8c;
+}
+
+
+/* INSIGHTS */
+
+.insights-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+
+.insight-card {
+    background: white;
+
+    border: 1px solid #e9ecf2;
+
+    border-radius: 16px;
+
+    padding: 23px;
+}
+
+
+.insight-card span {
+    color: #8e95a3;
+
+    font-size: 11px;
+}
+
+
+.insight-card strong {
+    display: block;
+
+    font-size: 18px;
+
+    margin-top: 10px;
+}
+
+
+.insight-card p {
+    color: #999fac;
+
+    font-size: 10px;
+
+    margin-top: 5px;
+}
+
+
+/* ================= MODAL ================= */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(18, 22, 35, 0.45);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 100;
+
+    padding: 20px;
+}
+
+
+.modal-overlay.show {
+    display: flex;
+}
+
+
+.modal {
+    width: 420px;
+
+    max-width: 100%;
+
+    background: white;
+
+    border-radius: 17px;
+
+    padding: 27px;
+
+    position: relative;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+
+.close-btn {
+    position: absolute;
+
+    top: 17px;
+    right: 18px;
+
+    background: #f4f5f7;
+
+    width: 29px;
+    height: 29px;
+
+    border-radius: 50%;
+
+    color: #777e8c;
+
+    font-size: 19px;
+}
+
+
+.modal-title {
+    display: flex;
+
+    gap: 13px;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+
+.modal-icon {
+    width: 42px;
+    height: 42px;
+
+    background: #eeefff;
+
+    color: #5b5ce2;
+
+    border-radius: 11px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 700;
+}
+
+
+.modal h2 {
+    font-size: 18px;
+}
+
+
+.modal-title p {
+    color: #9ca2af;
+
+    font-size: 10px;
+
+    margin-top: 4px;
+}
+
+
+.modal label {
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+    color: #555d6c;
+}
+
+
+.modal input {
+    width: 100%;
+
+    border: 1px solid #e1e4ea;
+
+    border-radius: 9px;
+
+    padding: 12px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    margin-bottom: 20px;
+}
+
+
+.modal input:focus {
+    border-color: #7778e7;
+
+    box-shadow: 0 0 0 3px #eeeeff;
+}
+
+
+.emoji-picker {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+}
+
+
+.emoji {
+    width: 40px;
+    height: 40px;
+
+    background: #f5f6f8;
+
+    border-radius: 9px;
+
+    font-size: 18px;
+}
+
+
+.emoji.active {
+    background: #eeeeff;
+
+    outline: 2px solid #5b5ce2;
+}
+
+
+.modal-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+}
+
+
+.cancel-btn,
+.save-btn {
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.cancel-btn {
+    background: #f1f2f5;
+
+    color: #697181;
+}
+
+
+.save-btn {
+    background: #5b5ce2;
+
+    color: white;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .main {
+        margin-left: 200px;
+
+        width: calc(100% - 200px);
+
+        padding: 30px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .main {
+        margin-left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .habit-header {
+        align-items: flex-start;
+    }
+
+    .habit-actions {
+        flex-direction: column;
+
+        align-items: flex-end;
+
+        gap: 5px;
+    }
+
+    .days-container {
+        gap: 4px;
+    }
+
+    .habit-day {
+        height: 34px;
+    }
+
+    .performance-row {
+        grid-template-columns: 1fr 80px 45px;
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
